@@ -21,6 +21,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 func _ready() -> void:
 	#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	direction = Vector3.BACK.rotated(Vector3.UP, camera_pivot.global_transform.basis.get_euler().y)
 
 func _physics_process(delta):
 	# Add the gravity.
