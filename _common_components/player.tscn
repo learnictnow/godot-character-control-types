@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://csv5v8jppnsrq"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rht0i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3sobb"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_gcu0j"]
+material = SubResource("StandardMaterial3D_3sobb")
+size = Vector3(0.5, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wmtfg"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_wax1l"]
+material = SubResource("StandardMaterial3D_wmtfg")
+
+[node name="Player" type="CharacterBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_rht0i")
+
+[node name="HeadMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.5, 0)
+mesh = SubResource("PrismMesh_gcu0j")
+skeleton = NodePath(".")
+
+[node name="BodyMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.5, 0)
+mesh = SubResource("PrismMesh_wax1l")
+
+[node name="HealthLabel" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+pixel_size = 0.001
+billboard = 1
+fixed_size = true
+text = "HEALTH"
+font_size = 16
+outline_size = 2

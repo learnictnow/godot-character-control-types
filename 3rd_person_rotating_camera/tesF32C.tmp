@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqta3808rf273"]
+
+[ext_resource type="PackedScene" uid="uid://j3xjbvg4abl4" path="res://_common_components/test_level.tscn" id="1_o1vvg"]
+[ext_resource type="PackedScene" uid="uid://cvlqdpoomilt2" path="res://3rd_person_rotating_camera/player_3_rd_person.tscn" id="2_abwac"]
+
+[node name="TestLevel" instance=ExtResource("1_o1vvg")]
+
+[node name="Player_3rd_person" parent="." index="9" instance=ExtResource("2_abwac")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0263357, 0, 3.28701)

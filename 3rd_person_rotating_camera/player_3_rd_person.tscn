@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvlqdpoomilt2"]
+
+[ext_resource type="PackedScene" uid="uid://csv5v8jppnsrq" path="res://_common_components/player.tscn" id="1_jy8dd"]
+[ext_resource type="Script" path="res://3rd_person_rotating_camera/player_3_rd_person.gd" id="2_5yrme"]
+
+[node name="Player_3rd_person" instance=ExtResource("1_jy8dd")]
+script = ExtResource("2_5yrme")
+
+[node name="PivotPoint" type="Marker3D" parent="." index="3"]
+
+[node name="Camera3D" type="Camera3D" parent="PivotPoint" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 3.6, 5)

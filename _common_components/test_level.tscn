@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://j3xjbvg4abl4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ttlr8"]
+albedo_color = Color(0.158423, 0.256843, 0.137816, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nmj4q"]
+material = SubResource("StandardMaterial3D_ttlr8")
+size = Vector2(1000, 1000)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_vshny"]
+
+[node name="TestLevel" type="Node3D"]
+
+[node name="Floor" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("PlaneMesh_nmj4q")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("WorldBoundaryShape3D_vshny")
+
+[node name="SpawnPoint" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 4, 0)
+shadow_bias = 6.087
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11)
+use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -3)
+use_collision = true
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.3, 2)
+use_collision = true
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, -0.3, -2)
+use_collision = true
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(0.707107, 0.707107, 0, -0.612372, 0.612372, 0.5, 0.353553, -0.353553, 0.866025, -3, -0.3, -2)
+use_collision = true
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+transform = Transform3D(0.707107, 0.707107, 0, -0.612372, 0.612372, 0.5, 0.353553, -0.353553, 0.866025, 1, 2.7, -5)
+use_collision = true

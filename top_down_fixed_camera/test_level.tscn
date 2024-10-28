@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx43kkdpdqixr"]
+
+[ext_resource type="PackedScene" uid="uid://j3xjbvg4abl4" path="res://_common_components/test_level.tscn" id="1_17bg4"]
+[ext_resource type="PackedScene" uid="uid://dhbjyjkr0p6bc" path="res://top_down_fixed_camera/top_down_player.tscn" id="2_v84xk"]
+
+[node name="TestLevel" instance=ExtResource("1_17bg4")]
+
+[node name="TopDownPlayer" parent="." index="9" instance=ExtResource("2_v84xk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.95709, 0, 1.06633)
